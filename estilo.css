@@ -80,3 +80,13 @@ main{
 .conf-color-3-b{
     background-color: gray;
 }
+
+
+.bg-body-tertiary {
+    --bs-bg-opacity: 1;
+    background-color: rgb(127, 191, 139) !important;
+}
+
+.navbar-brand {
+    color: rgb(255 255 255);
+}
