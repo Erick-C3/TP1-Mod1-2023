@@ -1,19 +1,26 @@
 body{
-    display: grid;
-    place-content: center;
     background-color: rgb(218, 228, 218);
     font-size: 2.5vh;
 }
 
-header{
+.bg-body-tertiary {
+    --bs-bg-opacity: 1;
+    background-color: rgb(150, 182, 139) !important;
+}
+
+
+
+
+#opciones-productos{
+    margin-top: 3vh;
     display: grid;
     place-content: center;
 }
 
-#opciones-productos{
-    display: grid;
-    place-content: center;
+#carrito-notif{
+    margin-right: 3vh;
 }
+
 
 #contenedor-productos{
     display: flex;
@@ -31,6 +38,8 @@ header{
     padding: 3px;
 }
 
+
+
 .producto select{
     font-size: 2.5vh;
     margin: 3px;
@@ -46,11 +55,11 @@ header{
 }
 
 
-main{
+/* main{
     display: grid;
     place-content: center;
 }
-
+ */
 
 #info-opc-prod{
     display: grid;

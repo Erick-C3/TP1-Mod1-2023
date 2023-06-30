@@ -3,6 +3,7 @@ const selectCantProductosMostrar = document.querySelector("#opc-cant");
 const selectCantProdPermitida = document.querySelector("#opc-cant-permitida");
 const selectColorConfig = document.querySelector("#opc-color");
 const pInfoConfProd = document.querySelector("#info-opc-prod p");
+const spanCarritoContador = document.querySelector("#carrito-contador");
 
 const vectImg = [
     "https://cdn-icons-png.flaticon.com/512/1554/1554591.png",
@@ -18,6 +19,8 @@ const vectImg = [
 ];
 
 const CSS_CLASE_CONFIG = "conf-color-";
+
+let carritoContadorActual = 0;
 
 /**
  * Inicia el reinicio de productos a mostrar en la pagina
@@ -54,7 +57,7 @@ function mostrarInfoConfProd(cantProdMostrar, cantProdPermitidos, confColorProd)
 function htmlGenerarProductos(cantidadProd, cantPermitida, confColorProd){
     let claseCssUsar = CSS_CLASE_CONFIG + confColorProd + "-";
     divContenedorProductos.innerHTML = "";
-    for (let i = 0; i < cantidadProd; i++) {
+    /* for (let i = 0; i < cantidadProd; i++) {
         divContenedorProductos.innerHTML +=`
             <div class="producto ${alternarColores(i, claseCssUsar)}" id="producto-${i}">
                 <p>Producto ${i+1}</p>
@@ -63,10 +66,29 @@ function htmlGenerarProductos(cantidadProd, cantPermitida, confColorProd){
                 </div>
                 ${htmlGenerarOpcionesPago(i)}
                 ${htmlGenerarOpcionesCant(i, cantPermitida)}
-                <button>Comprar</button>
+                <button onclick="comprar()">Comprar</button>
             </div>
         `;        
-   }
+   } */
+
+   for (let i = 0; i < cantidadProd; i++) {
+    divContenedorProductos.innerHTML +=`
+        <div class=" producto card ${alternarColores(i, claseCssUsar)}" style="width: 18rem;">
+            <img src="${vectImg[i]}" class="card-img-top prod-img" alt="producto ${i}">
+            <div class="card-body">
+                <h5 class="card-title">Producto ${i+1}</h5>
+                ${htmlGenerarOpcionesPago(i)}
+                ${htmlGenerarOpcionesCant(i, cantPermitida)}
+                <button onclick="comprar()">Comprar</button>
+            </div>
+        </div>
+    `;        
+} 
+}
+
+function comprar(){
+    carritoContadorActual++;
+    spanCarritoContador.innerHTML = carritoContadorActual+"+";
 }
 
 /**
