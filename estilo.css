@@ -93,3 +93,18 @@ body{
 .conf-color-3-b{
     background-color: gray;
 }
+
+
+@media (min-width: 992px){
+   #carrito-notif-1{
+    display: none;
+   }
+}
+
+
+@media (max-width: 992px){
+    #carrito-notif-2{
+     display: none;
+    }
+ }
+ 

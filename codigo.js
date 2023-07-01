@@ -3,7 +3,9 @@ const selectCantProductosMostrar = document.querySelector("#opc-cant");
 const selectCantProdPermitida = document.querySelector("#opc-cant-permitida");
 const selectColorConfig = document.querySelector("#opc-color");
 const pInfoConfProd = document.querySelector("#info-opc-prod p");
-const spanCarritoContador = document.querySelector("#carrito-contador");
+const spanCarritoContadorUno = document.querySelector("#carrito-contador-1");
+const spanCarritoContadorDos = document.querySelector("#carrito-contador-2");
+
 
 const vectImg = [
     "https://cdn-icons-png.flaticon.com/512/1554/1554591.png",
@@ -79,16 +81,20 @@ function htmlGenerarProductos(cantidadProd, cantPermitida, confColorProd){
                 <h5 class="card-title">Producto ${i+1}</h5>
                 ${htmlGenerarOpcionesPago(i)}
                 ${htmlGenerarOpcionesCant(i, cantPermitida)}
-                <button onclick="comprar()">Comprar</button>
+                <button onclick="actualizarCarritoCompra()">Comprar</button>
             </div>
         </div>
     `;        
 } 
 }
 
-function comprar(){
+/**
+ * Actualiza cantidad de productos para comprar en el carrito
+ */
+function actualizarCarritoCompra(){
     carritoContadorActual++;
-    spanCarritoContador.innerHTML = carritoContadorActual+"+";
+    spanCarritoContadorUno.innerHTML = carritoContadorActual+"+";
+    spanCarritoContadorDos.innerHTML = carritoContadorActual+"+";
 }
 
 /**
